@@ -1,12 +1,11 @@
 ﻿using FStoreAppLibrary.Data_Layer;
 using FStoreAppLibrary.Models;
-using System.Collections;
 
 public class Program : FStoreContext
 {
     public static void Main()
     {
-        Member member = new Member
+        /*Member member = new Member
         {
             MemberId = 3,
             Email = "Emxample@gmail.com",
@@ -17,7 +16,9 @@ public class Program : FStoreContext
         };
 
         Console.WriteLine(MemberDBContext.Instance.Insert(member));
+        Console.ReadLine();*/
+
+     Console.WriteLine(OrderDetailDBContext.Instance.GetOrderDetailById(1,1));
         Console.ReadLine();
-        
     }
 }

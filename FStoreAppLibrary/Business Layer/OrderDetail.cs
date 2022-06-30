@@ -13,5 +13,10 @@ namespace FStoreAppLibrary.Models
 
         public virtual Order Order { get; set; } = null!;
         public virtual Product OrderNavigation { get; set; } = null!;
+
+        public override string? ToString()
+        {
+            return $"OrderID: {OrderId}; ProductID: {ProductId}";
+        }
     }
 }
