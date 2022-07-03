@@ -29,7 +29,8 @@ namespace WinFormsApp1
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            
+            //btnOrderManagement.Visible = false;
         }
 
         private void loadForm(Form form)
@@ -79,5 +80,6 @@ namespace WinFormsApp1
             frmLogin frmLogin = new frmLogin();
             frmLogin.Show();
         }
+
     }
 }

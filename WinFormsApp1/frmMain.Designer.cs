@@ -78,14 +78,14 @@
             // btnLogOut
             // 
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(224, 26);
+            this.btnLogOut.Size = new System.Drawing.Size(143, 26);
             this.btnLogOut.Text = "Log out";
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnExit
             // 
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(224, 26);
+            this.btnExit.Size = new System.Drawing.Size(143, 26);
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -207,14 +207,14 @@
             // 
             this.pnContent.Location = new System.Drawing.Point(3, 58);
             this.pnContent.Name = "pnContent";
-            this.pnContent.Size = new System.Drawing.Size(925, 482);
+            this.pnContent.Size = new System.Drawing.Size(925, 590);
             this.pnContent.TabIndex = 3;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 543);
+            this.ClientSize = new System.Drawing.Size(931, 651);
             this.Controls.Add(this.pnContent);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);

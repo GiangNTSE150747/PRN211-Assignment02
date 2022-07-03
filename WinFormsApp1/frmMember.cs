@@ -27,6 +27,7 @@ namespace WinFormsApp1
             dgvMemberList.CellDoubleClick += dgvMemberList_CellDoubleClick;
         }
 
+
         private void btnLoad_Click(object sender, EventArgs e)
         {
             LoadMemberList();
@@ -153,5 +154,6 @@ namespace WinFormsApp1
                 source.Position = source.Count - 1;
             }
         }
+
     }
 }

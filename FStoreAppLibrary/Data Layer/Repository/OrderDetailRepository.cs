@@ -17,5 +17,7 @@ namespace FStoreAppLibrary.Data_Layer.Repository
         public bool InsertOrderDetail(OrderDetail orderDetail) => OrderDetailDBContext.Instance.Insert(orderDetail);
 
         public bool UpdateOrderDetail(OrderDetail orderDetail) => OrderDetailDBContext.Instance.Update(orderDetail);
+
+        public List<OrderDetail> GetOrderItemsByOrderId(int orderId) => OrderDetailDBContext.Instance.GetOrderItemsByOrderId(orderId);
     }
 }

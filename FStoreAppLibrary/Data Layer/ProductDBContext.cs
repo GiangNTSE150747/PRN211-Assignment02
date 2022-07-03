@@ -31,6 +31,31 @@ namespace FStoreAppLibrary.Data_Layer
             }
         }
 
+        public List<Product> SearchProducts(string searchBy, string keyword)
+        {
+            using (FStoreContext fStoreContext = new FStoreContext())
+            {
+                switch (searchBy)
+                {
+                    case "Product Name":
+                        return fStoreContext.Products.Where(p => p.ProductName.Contains(keyword)).ToList();
+                        break;
+                    case "Product ID":
+                        return fStoreContext.Products.Where(p => p.ProductId == int.Parse(keyword)).ToList();
+                        break;
+                    case "Unit In Stock":
+                        return fStoreContext.Products.Where(p => p.UnitStock == int.Parse(keyword)).ToList();
+                        break;
+                    case "Unit Price":
+                        return fStoreContext.Products.Where(p => p.UnitPrice == decimal.Parse(keyword)).ToList();
+                        break;
+                    default:
+                        return null;
+                        break;
+                }
+            }
+        }
+
         public Product GetProductById(int producId)
         {
             using (FStoreContext fStoreContext = new FStoreContext())

@@ -18,5 +18,7 @@ namespace FStoreAppLibrary.Data_Layer.Repository
         public bool InsertProduct(Product product) => ProductDBContext.Instance.Insert(product);
 
         public bool UpdateProduct(Product product) => ProductDBContext.Instance.Update(product);
+
+        public List<Product> Searching(string searchBy, string keyword) => ProductDBContext.Instance.SearchProducts(searchBy, keyword);
     }
 }

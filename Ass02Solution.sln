@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FStoreAppLibrary", "FStoreA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestConnect", "TestConnect\TestConnect.csproj", "{DA6F845C-4FFE-4A8B-8EB5-29BF86EFE536}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsApp1", "WinFormsApp1\WinFormsApp1.csproj", "{7A0D93A1-1451-4DD2-A7D1-520E58DD12DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaleWinApps", "WinFormsApp1\SaleWinApps.csproj", "{7A0D93A1-1451-4DD2-A7D1-520E58DD12DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

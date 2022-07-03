@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
             this.txtFreight = new System.Windows.Forms.TextBox();
             this.txtShippedDate = new System.Windows.Forms.TextBox();
             this.txtRequiredDate = new System.Windows.Forms.TextBox();
-            this.txtOrderDate = new System.Windows.Forms.TextBox();
             this.txtMemberId = new System.Windows.Forms.TextBox();
             this.txtOrderId = new System.Windows.Forms.TextBox();
             this.lbShippedDate = new System.Windows.Forms.Label();
@@ -46,83 +44,77 @@
             this.lbOrderId = new System.Windows.Forms.Label();
             this.dgvOrderList = new System.Windows.Forms.DataGridView();
             this.lbHeader = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnReport = new System.Windows.Forms.Button();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtOrderDate = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderList)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(678, 246);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(94, 29);
-            this.btnUpdate.TabIndex = 40;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(495, 246);
+            this.btnDelete.Location = new System.Drawing.Point(633, 360);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(94, 29);
+            this.btnDelete.Size = new System.Drawing.Size(146, 29);
             this.btnDelete.TabIndex = 39;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(312, 246);
+            this.btnAdd.Location = new System.Drawing.Point(387, 360);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(94, 29);
+            this.btnAdd.Size = new System.Drawing.Size(146, 29);
             this.btnAdd.TabIndex = 38;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(129, 246);
+            this.btnLoad.Location = new System.Drawing.Point(141, 360);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(94, 29);
+            this.btnLoad.Size = new System.Drawing.Size(146, 29);
             this.btnLoad.TabIndex = 37;
             this.btnLoad.Text = "Load";
             this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // txtFreight
             // 
-            this.txtFreight.Location = new System.Drawing.Point(598, 191);
+            this.txtFreight.Location = new System.Drawing.Point(599, 315);
             this.txtFreight.Name = "txtFreight";
             this.txtFreight.Size = new System.Drawing.Size(226, 27);
             this.txtFreight.TabIndex = 35;
             // 
             // txtShippedDate
             // 
-            this.txtShippedDate.Location = new System.Drawing.Point(598, 150);
+            this.txtShippedDate.Location = new System.Drawing.Point(599, 274);
             this.txtShippedDate.Name = "txtShippedDate";
             this.txtShippedDate.Size = new System.Drawing.Size(226, 27);
             this.txtShippedDate.TabIndex = 34;
             // 
             // txtRequiredDate
             // 
-            this.txtRequiredDate.Location = new System.Drawing.Point(598, 109);
+            this.txtRequiredDate.Location = new System.Drawing.Point(599, 233);
             this.txtRequiredDate.Name = "txtRequiredDate";
             this.txtRequiredDate.Size = new System.Drawing.Size(226, 27);
             this.txtRequiredDate.TabIndex = 33;
             // 
-            // txtOrderDate
-            // 
-            this.txtOrderDate.Location = new System.Drawing.Point(192, 187);
-            this.txtOrderDate.Name = "txtOrderDate";
-            this.txtOrderDate.Size = new System.Drawing.Size(226, 27);
-            this.txtOrderDate.TabIndex = 36;
-            // 
             // txtMemberId
             // 
-            this.txtMemberId.Location = new System.Drawing.Point(192, 148);
+            this.txtMemberId.Location = new System.Drawing.Point(193, 272);
             this.txtMemberId.Name = "txtMemberId";
             this.txtMemberId.Size = new System.Drawing.Size(226, 27);
             this.txtMemberId.TabIndex = 32;
             // 
             // txtOrderId
             // 
-            this.txtOrderId.Location = new System.Drawing.Point(192, 109);
+            this.txtOrderId.Location = new System.Drawing.Point(193, 233);
             this.txtOrderId.Name = "txtOrderId";
             this.txtOrderId.Size = new System.Drawing.Size(226, 27);
             this.txtOrderId.TabIndex = 31;
@@ -130,7 +122,7 @@
             // lbShippedDate
             // 
             this.lbShippedDate.AutoSize = true;
-            this.lbShippedDate.Location = new System.Drawing.Point(479, 153);
+            this.lbShippedDate.Location = new System.Drawing.Point(480, 277);
             this.lbShippedDate.Name = "lbShippedDate";
             this.lbShippedDate.Size = new System.Drawing.Size(100, 20);
             this.lbShippedDate.TabIndex = 30;
@@ -139,7 +131,7 @@
             // lbMemberId
             // 
             this.lbMemberId.AutoSize = true;
-            this.lbMemberId.Location = new System.Drawing.Point(85, 155);
+            this.lbMemberId.Location = new System.Drawing.Point(86, 279);
             this.lbMemberId.Name = "lbMemberId";
             this.lbMemberId.Size = new System.Drawing.Size(84, 20);
             this.lbMemberId.TabIndex = 29;
@@ -148,7 +140,7 @@
             // lbOrderDate
             // 
             this.lbOrderDate.AutoSize = true;
-            this.lbOrderDate.Location = new System.Drawing.Point(85, 194);
+            this.lbOrderDate.Location = new System.Drawing.Point(86, 318);
             this.lbOrderDate.Name = "lbOrderDate";
             this.lbOrderDate.Size = new System.Drawing.Size(83, 20);
             this.lbOrderDate.TabIndex = 28;
@@ -157,7 +149,7 @@
             // lbFreight
             // 
             this.lbFreight.AutoSize = true;
-            this.lbFreight.Location = new System.Drawing.Point(479, 194);
+            this.lbFreight.Location = new System.Drawing.Point(480, 318);
             this.lbFreight.Name = "lbFreight";
             this.lbFreight.Size = new System.Drawing.Size(55, 20);
             this.lbFreight.TabIndex = 27;
@@ -166,7 +158,7 @@
             // lbRequiredDate
             // 
             this.lbRequiredDate.AutoSize = true;
-            this.lbRequiredDate.Location = new System.Drawing.Point(479, 112);
+            this.lbRequiredDate.Location = new System.Drawing.Point(480, 236);
             this.lbRequiredDate.Name = "lbRequiredDate";
             this.lbRequiredDate.Size = new System.Drawing.Size(105, 20);
             this.lbRequiredDate.TabIndex = 26;
@@ -175,7 +167,7 @@
             // lbOrderId
             // 
             this.lbOrderId.AutoSize = true;
-            this.lbOrderId.Location = new System.Drawing.Point(85, 116);
+            this.lbOrderId.Location = new System.Drawing.Point(86, 240);
             this.lbOrderId.Name = "lbOrderId";
             this.lbOrderId.Size = new System.Drawing.Size(66, 20);
             this.lbOrderId.TabIndex = 25;
@@ -184,37 +176,109 @@
             // dgvOrderList
             // 
             this.dgvOrderList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrderList.Location = new System.Drawing.Point(2, 297);
+            this.dgvOrderList.Location = new System.Drawing.Point(2, 410);
             this.dgvOrderList.Name = "dgvOrderList";
+            this.dgvOrderList.ReadOnly = true;
             this.dgvOrderList.RowHeadersWidth = 51;
             this.dgvOrderList.RowTemplate.Height = 29;
-            this.dgvOrderList.Size = new System.Drawing.Size(921, 182);
+            this.dgvOrderList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOrderList.Size = new System.Drawing.Size(921, 177);
             this.dgvOrderList.TabIndex = 24;
+            this.dgvOrderList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderList_CellDoubleClick);
             // 
             // lbHeader
             // 
             this.lbHeader.AutoSize = true;
             this.lbHeader.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbHeader.Location = new System.Drawing.Point(242, 26);
+            this.lbHeader.Location = new System.Drawing.Point(253, 9);
             this.lbHeader.Name = "lbHeader";
             this.lbHeader.Size = new System.Drawing.Size(423, 50);
             this.lbHeader.TabIndex = 23;
             this.lbHeader.Text = "ORDER MANAGEMENT";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.Location = new System.Drawing.Point(87, 207);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(738, 2);
+            this.panel1.TabIndex = 40;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(91, 87);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 25);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Statistic:";
+            // 
+            // btnReport
+            // 
+            this.btnReport.Location = new System.Drawing.Point(731, 83);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(94, 29);
+            this.btnReport.TabIndex = 42;
+            this.btnReport.Text = "View report";
+            this.btnReport.UseVisualStyleBackColor = true;
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Location = new System.Drawing.Point(464, 88);
+            this.maskedTextBox2.Mask = "00/00/0000";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(226, 27);
+            this.maskedTextBox2.TabIndex = 43;
+            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBox2.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(197, 88);
+            this.maskedTextBox1.Mask = "00/00/0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(226, 27);
+            this.maskedTextBox1.TabIndex = 43;
+            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
+            // 
+            // txtOrderDate
+            // 
+            this.txtOrderDate.Location = new System.Drawing.Point(193, 315);
+            this.txtOrderDate.Name = "txtOrderDate";
+            this.txtOrderDate.Size = new System.Drawing.Size(226, 27);
+            this.txtOrderDate.TabIndex = 44;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(87, 167);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 25);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "Total Order:";
+            // 
             // frmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(923, 480);
+            this.ClientSize = new System.Drawing.Size(924, 588);
             this.ControlBox = false;
-            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtOrderDate);
+            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.btnReport);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.txtFreight);
             this.Controls.Add(this.txtShippedDate);
             this.Controls.Add(this.txtRequiredDate);
-            this.Controls.Add(this.txtOrderDate);
             this.Controls.Add(this.txtMemberId);
             this.Controls.Add(this.txtOrderId);
             this.Controls.Add(this.lbShippedDate);
@@ -227,6 +291,7 @@
             this.Controls.Add(this.lbHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmOrder";
+            this.Load += new System.EventHandler(this.frmOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -234,15 +299,12 @@
         }
 
         #endregion
-
-        private Button btnUpdate;
         private Button btnDelete;
         private Button btnAdd;
         private Button btnLoad;
         private TextBox txtFreight;
         private TextBox txtShippedDate;
         private TextBox txtRequiredDate;
-        private TextBox txtOrderDate;
         private TextBox txtMemberId;
         private TextBox txtOrderId;
         private Label lbShippedDate;
@@ -253,5 +315,12 @@
         private Label lbOrderId;
         private DataGridView dgvOrderList;
         private Label lbHeader;
+        private Panel panel1;
+        private Label label1;
+        private Button btnReport;
+        private MaskedTextBox maskedTextBox2;
+        private MaskedTextBox maskedTextBox1;
+        private MaskedTextBox txtOrderDate;
+        private Label label2;
     }
 }

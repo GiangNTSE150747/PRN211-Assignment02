@@ -90,5 +90,14 @@ namespace FStoreAppLibrary.Data_Layer
             }
             return false;
         }
+
+        public List<OrderDetail> GetOrderItemsByOrderId(int orderId)
+        {
+            using (FStoreContext fStoreContext = new FStoreContext())
+            {
+               return fStoreContext.OrderDetails.Where(s => s.OrderId == orderId).ToList();
+            }
+
+        }
     }
 }
