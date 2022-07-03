@@ -1,0 +1,129 @@
+﻿namespace Test
+{
+    partial class frmLogin
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.lbLogin = new System.Windows.Forms.Label();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.lbPassword = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // lbLogin
+            // 
+            this.lbLogin.AutoSize = true;
+            this.lbLogin.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbLogin.Location = new System.Drawing.Point(130, 38);
+            this.lbLogin.Name = "lbLogin";
+            this.lbLogin.Size = new System.Drawing.Size(329, 41);
+            this.lbLogin.TabIndex = 0;
+            this.lbLogin.Text = "Login to Your Account";
+            // 
+            // lbEmail
+            // 
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Location = new System.Drawing.Point(106, 116);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(46, 20);
+            this.lbEmail.TabIndex = 1;
+            this.lbEmail.Text = "Email";
+            // 
+            // lbPassword
+            // 
+            this.lbPassword.AutoSize = true;
+            this.lbPassword.Location = new System.Drawing.Point(106, 180);
+            this.lbPassword.Name = "lbPassword";
+            this.lbPassword.Size = new System.Drawing.Size(70, 20);
+            this.lbPassword.TabIndex = 1;
+            this.lbPassword.Text = "Password";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(106, 139);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(376, 27);
+            this.txtEmail.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(106, 203);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
+            this.textBox2.Size = new System.Drawing.Size(376, 27);
+            this.textBox2.TabIndex = 2;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.Location = new System.Drawing.Point(388, 272);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(94, 29);
+            this.btnLogin.TabIndex = 3;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnLogin_KeyDown);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(267, 272);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(94, 29);
+            this.btnExit.TabIndex = 4;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // frmLogin
+            // 
+            this.ClientSize = new System.Drawing.Size(619, 322);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.lbPassword);
+            this.Controls.Add(this.lbEmail);
+            this.Controls.Add(this.lbLogin);
+            this.Name = "frmLogin";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+        private Label lbLogin;
+        private Label lbEmail;
+        private Label lbPassword;
+        private TextBox txtEmail;
+        private TextBox textBox2;
+        private Button btnLogin;
+        private Button btnExit;
+    }
+}

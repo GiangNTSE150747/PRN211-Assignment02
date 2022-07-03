@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FStoreAppLibrary.Data_Layer.Repository
 {
-    internal class MemberRepository : IMemberRepository
+    public class MemberRepository : IMemberRepository
     {
         public bool DeleteMember(int memberId) => MemberDBContext.Instance.Delete(memberId);
 
@@ -18,6 +18,8 @@ namespace FStoreAppLibrary.Data_Layer.Repository
         public bool InsertMember(Member member) => MemberDBContext.Instance.Insert(member);
 
         public bool UpdateMember(Member member) => MemberDBContext.Instance.Update(member);
+
+        public bool CheckExistAdmin(string email, string password) => MemberDBContext.Instance.Exist(email, password);  
 
     }
 }

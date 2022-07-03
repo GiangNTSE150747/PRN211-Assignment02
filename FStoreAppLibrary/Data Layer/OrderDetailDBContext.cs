@@ -4,6 +4,7 @@ namespace FStoreAppLibrary.Data_Layer
 {
     public class OrderDetailDBContext
     {
+        //Singleton Pattern
         private static OrderDetailDBContext instance = null;
         private static readonly object instanceLock = new object();
         private OrderDetailDBContext() { }

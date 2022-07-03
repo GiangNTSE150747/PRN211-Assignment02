@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FStoreAppLibrary.Models
 {
@@ -21,6 +22,7 @@ namespace FStoreAppLibrary.Models
         {
             return $"Email: {Email}";
         }
+
         public virtual ICollection<Order> Orders { get; set; }
     }
 }

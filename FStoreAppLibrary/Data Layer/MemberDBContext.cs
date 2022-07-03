@@ -87,5 +87,16 @@ namespace FStoreAppLibrary.Data_Layer
             return false;
         }
 
+        public Boolean Exist(string email, string password)
+        {
+            using (FStoreContext fStoreContext = new FStoreContext())
+            {
+                if(fStoreContext.Members.Where(m => m.Email == email && m.Password == password).Count() > 0)
+                {
+                    return true;
+                }            
+            }
+            return false;
+        }
     }
 }
