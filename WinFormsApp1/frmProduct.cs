@@ -169,5 +169,10 @@ namespace WinFormsApp1
                 MessageBox.Show(ex.Message, "Load product list");
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

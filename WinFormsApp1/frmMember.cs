@@ -16,6 +16,9 @@ namespace WinFormsApp1
     {
         IMemberRepository memberRepository = new MemberRepository();
         BindingSource source;
+
+        public Member User { get; set; } = null;
+
         public frmMember()
         {
             InitializeComponent();
@@ -25,8 +28,21 @@ namespace WinFormsApp1
         {
             btnDelete.Enabled = false;
             dgvMemberList.CellDoubleClick += dgvMemberList_CellDoubleClick;
+
+            if(User != null)
+            {
+                UserInitializeComponent();
+            }
         }
 
+         private void UserInitializeComponent()
+        {
+            lbHeader.Text = "YOUR INFORMATION";
+            btnAdd.Visible = false;
+            btnLoad.Visible = false;
+            btnDelete.Visible = false;
+            dgvMemberList.Visible = false;
+        }
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
@@ -155,5 +171,14 @@ namespace WinFormsApp1
             }
         }
 
+        private void lbHeader_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

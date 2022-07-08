@@ -1,4 +1,5 @@
 ﻿using FStoreAppLibrary.Data_Layer.Repository;
+using FStoreAppLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -27,10 +29,25 @@ namespace WinFormsApp1
 
             string email = txtEmail.Text;
             string password = txtPassword.Text;
-            if (((MemberRepository)memberRepository).CheckExistAdmin(email, password))
+
+            string jsonString = File.ReadAllText("appsettings.json");
+            Member admin = JsonSerializer.Deserialize<Member>(jsonString)!;
+
+            if(email.Equals(admin.Email) && password.Equals(admin.Password))
             {
                 this.Hide();
                 frmMain frmMain = new frmMain();
+                frmMain.ShowDialog();
+            }
+
+            else if (((MemberRepository)memberRepository).CheckExistUser(email, password) != null)
+            {
+                this.Hide();
+                frmMain frmMain = new frmMain
+                {
+                    User = ((MemberRepository)memberRepository).CheckExistUser(email, password)
+                };
+
                 frmMain.ShowDialog();
             }
             else

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FStoreAppLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,9 @@ namespace WinFormsApp1
 {
     public partial class frmMain : Form
     {
+
+        public Member User { get; set; } = null;
+
         public frmMain()
         {
             InitializeComponent();
@@ -24,13 +28,30 @@ namespace WinFormsApp1
 
         private void btnMemberManage_Click(object sender, EventArgs e)
         {
-            loadForm(new frmMember());
+            loadForm(new frmMember
+            {
+                User = this.User
+            });
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            
-            //btnOrderManagement.Visible = false;
+            if(User != null)
+            {
+                UserInitializeComponent();
+            }
+
+        }
+
+        private void UserInitializeComponent()
+        {
+            btnMemberManage.Text = "Your Infor";
+            tsBtnMemberManagememt.Text = "Your Infor";
+            seperator1.Visible = false;
+            btnProductManagement.Visible = false;
+            tsBtnProductManagement.Visible = false;
+            btnOrderManagement.Text = "Order History";
+            tsBtnOrderManagement.Text = "Order History";
         }
 
         private void loadForm(Form form)

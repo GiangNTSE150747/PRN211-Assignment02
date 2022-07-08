@@ -45,36 +45,41 @@
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMemberList)).BeginInit();
             this.SuspendLayout();
             // 
             // lbHeader
             // 
+            this.lbHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbHeader.AutoSize = true;
             this.lbHeader.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbHeader.Location = new System.Drawing.Point(241, 26);
+            this.lbHeader.Location = new System.Drawing.Point(188, 62);
             this.lbHeader.Name = "lbHeader";
             this.lbHeader.Size = new System.Drawing.Size(458, 50);
             this.lbHeader.TabIndex = 0;
             this.lbHeader.Text = "MEMBER MANAGEMENT";
+            this.lbHeader.Click += new System.EventHandler(this.lbHeader_Click);
             // 
             // dgvMemberList
             // 
+            this.dgvMemberList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvMemberList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMemberList.Location = new System.Drawing.Point(1, 391);
+            this.dgvMemberList.Location = new System.Drawing.Point(1, 354);
             this.dgvMemberList.Name = "dgvMemberList";
             this.dgvMemberList.ReadOnly = true;
             this.dgvMemberList.RowHeadersWidth = 51;
             this.dgvMemberList.RowTemplate.Height = 29;
             this.dgvMemberList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMemberList.Size = new System.Drawing.Size(921, 196);
+            this.dgvMemberList.Size = new System.Drawing.Size(799, 132);
             this.dgvMemberList.TabIndex = 1;
             this.dgvMemberList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMemberList_CellDoubleClick);
             // 
             // lbMemberId
             // 
+            this.lbMemberId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbMemberId.AutoSize = true;
-            this.lbMemberId.Location = new System.Drawing.Point(80, 131);
+            this.lbMemberId.Location = new System.Drawing.Point(30, 150);
             this.lbMemberId.Name = "lbMemberId";
             this.lbMemberId.Size = new System.Drawing.Size(84, 20);
             this.lbMemberId.TabIndex = 2;
@@ -82,8 +87,9 @@
             // 
             // lbCompanyName
             // 
+            this.lbCompanyName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbCompanyName.AutoSize = true;
-            this.lbCompanyName.Location = new System.Drawing.Point(80, 206);
+            this.lbCompanyName.Location = new System.Drawing.Point(30, 225);
             this.lbCompanyName.Name = "lbCompanyName";
             this.lbCompanyName.Size = new System.Drawing.Size(116, 20);
             this.lbCompanyName.TabIndex = 2;
@@ -91,8 +97,9 @@
             // 
             // lbEmail
             // 
+            this.lbEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(80, 169);
+            this.lbEmail.Location = new System.Drawing.Point(30, 188);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(46, 20);
             this.lbEmail.TabIndex = 2;
@@ -100,8 +107,9 @@
             // 
             // lbCity
             // 
+            this.lbCity.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbCity.AutoSize = true;
-            this.lbCity.Location = new System.Drawing.Point(500, 128);
+            this.lbCity.Location = new System.Drawing.Point(450, 147);
             this.lbCity.Name = "lbCity";
             this.lbCity.Size = new System.Drawing.Size(34, 20);
             this.lbCity.TabIndex = 2;
@@ -109,8 +117,9 @@
             // 
             // lbPassword
             // 
+            this.lbPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbPassword.AutoSize = true;
-            this.lbPassword.Location = new System.Drawing.Point(500, 206);
+            this.lbPassword.Location = new System.Drawing.Point(450, 225);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(70, 20);
             this.lbPassword.TabIndex = 2;
@@ -118,8 +127,9 @@
             // 
             // lbCountry
             // 
+            this.lbCountry.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbCountry.AutoSize = true;
-            this.lbCountry.Location = new System.Drawing.Point(500, 169);
+            this.lbCountry.Location = new System.Drawing.Point(450, 188);
             this.lbCountry.Name = "lbCountry";
             this.lbCountry.Size = new System.Drawing.Size(60, 20);
             this.lbCountry.TabIndex = 2;
@@ -127,49 +137,62 @@
             // 
             // txtMenberId
             // 
-            this.txtMenberId.Location = new System.Drawing.Point(212, 125);
+            this.txtMenberId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtMenberId.Location = new System.Drawing.Point(162, 144);
             this.txtMenberId.Name = "txtMenberId";
+            this.txtMenberId.ReadOnly = true;
             this.txtMenberId.Size = new System.Drawing.Size(226, 27);
             this.txtMenberId.TabIndex = 3;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(212, 162);
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtEmail.Location = new System.Drawing.Point(162, 181);
             this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(226, 27);
             this.txtEmail.TabIndex = 3;
             // 
             // txtCompanyName
             // 
-            this.txtCompanyName.Location = new System.Drawing.Point(212, 203);
+            this.txtCompanyName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCompanyName.Location = new System.Drawing.Point(162, 222);
             this.txtCompanyName.Name = "txtCompanyName";
+            this.txtCompanyName.ReadOnly = true;
             this.txtCompanyName.Size = new System.Drawing.Size(226, 27);
             this.txtCompanyName.TabIndex = 3;
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(584, 124);
+            this.txtCity.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCity.Location = new System.Drawing.Point(534, 143);
             this.txtCity.Name = "txtCity";
+            this.txtCity.ReadOnly = true;
             this.txtCity.Size = new System.Drawing.Size(226, 27);
             this.txtCity.TabIndex = 3;
             // 
             // txtCountry
             // 
-            this.txtCountry.Location = new System.Drawing.Point(584, 166);
+            this.txtCountry.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCountry.Location = new System.Drawing.Point(534, 185);
             this.txtCountry.Name = "txtCountry";
+            this.txtCountry.ReadOnly = true;
             this.txtCountry.Size = new System.Drawing.Size(226, 27);
             this.txtCountry.TabIndex = 3;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(584, 206);
+            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPassword.Location = new System.Drawing.Point(534, 225);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.ReadOnly = true;
             this.txtPassword.Size = new System.Drawing.Size(226, 27);
             this.txtPassword.TabIndex = 3;
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(169, 264);
+            this.btnLoad.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLoad.Location = new System.Drawing.Point(33, 282);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(151, 29);
             this.btnLoad.TabIndex = 4;
@@ -179,7 +202,8 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(383, 264);
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAdd.Location = new System.Drawing.Point(225, 282);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(151, 29);
             this.btnAdd.TabIndex = 4;
@@ -189,7 +213,8 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(597, 264);
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDelete.Location = new System.Drawing.Point(417, 282);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(151, 29);
             this.btnDelete.TabIndex = 4;
@@ -197,10 +222,22 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnClose.Location = new System.Drawing.Point(609, 282);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(151, 29);
+            this.btnClose.TabIndex = 4;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // frmMember
             // 
-            this.ClientSize = new System.Drawing.Size(924, 588);
+            this.ClientSize = new System.Drawing.Size(798, 487);
             this.ControlBox = false;
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnLoad);
@@ -218,6 +255,7 @@
             this.Controls.Add(this.lbMemberId);
             this.Controls.Add(this.dgvMemberList);
             this.Controls.Add(this.lbHeader);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmMember";
             this.Load += new System.EventHandler(this.frmMember_Load);
@@ -246,5 +284,6 @@
         private Button btnLoad;
         private Button btnAdd;
         private Button btnDelete;
+        private Button btnClose;
     }
 }

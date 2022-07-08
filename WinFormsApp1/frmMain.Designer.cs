@@ -43,13 +43,15 @@
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnMemberManage = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.seperator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnProductManagement = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.btnOrderManagement = new System.Windows.Forms.ToolStripButton();
             this.pnContent = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.pnContent.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -62,7 +64,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(931, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(852, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -152,14 +154,14 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnMemberManage,
-            this.toolStripSeparator6,
+            this.seperator1,
             this.btnProductManagement,
             this.toolStripSeparator7,
             this.btnOrderManagement});
             this.toolStrip1.Location = new System.Drawing.Point(0, 28);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(931, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(852, 27);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -173,10 +175,10 @@
             this.btnMemberManage.Text = "Member Management";
             this.btnMemberManage.Click += new System.EventHandler(this.btnMemberManage_Click);
             // 
-            // toolStripSeparator6
+            // seperator1
             // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 27);
+            this.seperator1.Name = "seperator1";
+            this.seperator1.Size = new System.Drawing.Size(6, 27);
             // 
             // btnProductManagement
             // 
@@ -205,16 +207,28 @@
             // 
             // pnContent
             // 
+            this.pnContent.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnContent.Controls.Add(this.label1);
             this.pnContent.Location = new System.Drawing.Point(3, 58);
             this.pnContent.Name = "pnContent";
-            this.pnContent.Size = new System.Drawing.Size(925, 590);
+            this.pnContent.Size = new System.Drawing.Size(846, 592);
             this.pnContent.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(176, 249);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(485, 54);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "WELCOME TO FSTORE <3";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 651);
+            this.ClientSize = new System.Drawing.Size(852, 652);
             this.Controls.Add(this.pnContent);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -227,6 +241,8 @@
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.pnContent.ResumeLayout(false);
+            this.pnContent.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,10 +263,11 @@
         private ToolStripMenuItem toolStripMenuItem7;
         private ToolStrip toolStrip1;
         private ToolStripButton btnMemberManage;
-        private ToolStripSeparator toolStripSeparator6;
+        private ToolStripSeparator seperator1;
         private ToolStripButton btnProductManagement;
         private ToolStripSeparator toolStripSeparator7;
         private ToolStripButton btnOrderManagement;
         private Panel pnContent;
+        private Label label1;
     }
 }

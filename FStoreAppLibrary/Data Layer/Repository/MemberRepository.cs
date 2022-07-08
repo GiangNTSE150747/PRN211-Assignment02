@@ -19,7 +19,7 @@ namespace FStoreAppLibrary.Data_Layer.Repository
 
         public bool UpdateMember(Member member) => MemberDBContext.Instance.Update(member);
 
-        public bool CheckExistAdmin(string email, string password) => MemberDBContext.Instance.Exist(email, password);  
+        public Member CheckExistUser(string email, string password) => MemberDBContext.Instance.Exist(email, password);  
 
     }
 }
