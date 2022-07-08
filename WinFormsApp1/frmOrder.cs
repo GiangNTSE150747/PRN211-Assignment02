@@ -1,14 +1,5 @@
 ﻿using FStoreAppLibrary.Data_Layer.Repository;
 using FStoreAppLibrary.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
@@ -38,28 +29,7 @@ namespace WinFormsApp1
             var orders = orderRepository.GetOrders();
             try
             {
-                source = new BindingSource();
-                source.DataSource = orders;
-
-                txtOrderId.DataBindings.Clear();
-                txtMemberId.DataBindings.Clear();
-                txtOrderDate.DataBindings.Clear();
-                txtRequiredDate.DataBindings.Clear();
-                txtShippedDate.DataBindings.Clear();
-                txtFreight.DataBindings.Clear();
-
-                txtOrderId.DataBindings.Add("Text", source, "OrderId");
-                txtMemberId.DataBindings.Add("Text", source, "MemberId");
-                txtOrderDate.DataBindings.Add("Text", source, "OrderDate");
-                txtRequiredDate.DataBindings.Add("Text", source, "RequiredDate");
-                txtShippedDate.DataBindings.Add("Text", source, "ShippedDate");
-                txtFreight.DataBindings.Add("Text", source, "Freight");
-
-                dgvOrderList.DataSource = null;
-                dgvOrderList.DataSource = source;
-                this.dgvOrderList.Columns["Member"].Visible = false;
-                this.dgvOrderList.Columns["OrderDetails"].Visible = false;
-                this.dgvOrderList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+                FillDataGridView(orders);
 
                 if (orders.Count() == 0)
                 {
@@ -196,28 +166,7 @@ namespace WinFormsApp1
             var orders = orderRepository.GetOrdersByMemberId(frmMain.User.MemberId);
             try
             {
-                source = new BindingSource();
-                source.DataSource = orders;
-
-                txtOrderId.DataBindings.Clear();
-                txtMemberId.DataBindings.Clear();
-                txtOrderDate.DataBindings.Clear();
-                txtRequiredDate.DataBindings.Clear();
-                txtShippedDate.DataBindings.Clear();
-                txtFreight.DataBindings.Clear();
-
-                txtOrderId.DataBindings.Add("Text", source, "OrderId");
-                txtMemberId.DataBindings.Add("Text", source, "MemberId");
-                txtOrderDate.DataBindings.Add("Text", source, "OrderDate");
-                txtRequiredDate.DataBindings.Add("Text", source, "RequiredDate");
-                txtShippedDate.DataBindings.Add("Text", source, "ShippedDate");
-                txtFreight.DataBindings.Add("Text", source, "Freight");
-
-                dgvOrderList.DataSource = null;
-                dgvOrderList.DataSource = source;
-                this.dgvOrderList.Columns["Member"].Visible = false;
-                this.dgvOrderList.Columns["OrderDetails"].Visible = false;
-                this.dgvOrderList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+                FillDataGridView(orders);
 
                 if (orders.Count() == 0)
                 {
@@ -228,6 +177,32 @@ namespace WinFormsApp1
             {
                 MessageBox.Show(ex.Message, "Load order history");
             }
+        }
+
+        private void FillDataGridView(List<Order> orders)
+        {
+            source = new BindingSource();
+            source.DataSource = orders;
+
+            txtOrderId.DataBindings.Clear();
+            txtMemberId.DataBindings.Clear();
+            txtOrderDate.DataBindings.Clear();
+            txtRequiredDate.DataBindings.Clear();
+            txtShippedDate.DataBindings.Clear();
+            txtFreight.DataBindings.Clear();
+
+            txtOrderId.DataBindings.Add("Text", source, "OrderId");
+            txtMemberId.DataBindings.Add("Text", source, "MemberId");
+            txtOrderDate.DataBindings.Add("Text", source, "OrderDate");
+            txtRequiredDate.DataBindings.Add("Text", source, "RequiredDate");
+            txtShippedDate.DataBindings.Add("Text", source, "ShippedDate");
+            txtFreight.DataBindings.Add("Text", source, "Freight");
+
+            dgvOrderList.DataSource = null;
+            dgvOrderList.DataSource = source;
+            this.dgvOrderList.Columns["Member"].Visible = false;
+            this.dgvOrderList.Columns["OrderDetails"].Visible = false;
+            this.dgvOrderList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }

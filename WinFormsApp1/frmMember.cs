@@ -1,14 +1,5 @@
 ﻿using FStoreAppLibrary.Data_Layer.Repository;
 using FStoreAppLibrary.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
@@ -16,8 +7,6 @@ namespace WinFormsApp1
     {
         IMemberRepository memberRepository = new MemberRepository();
         BindingSource source;
-
-        //public Member User { get; set; } = null;
 
         public frmMember()
         {
