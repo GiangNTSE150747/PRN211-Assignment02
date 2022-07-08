@@ -14,6 +14,9 @@ namespace FStoreAppLibrary.Data_Layer.Repository
         public Order GetOrderById(int orderId) => OrderDBContext.Instance.GetOrderById(orderId);
 
         public List<Order> GetOrders() => OrderDBContext.Instance.GetOrders();
+
+        public List<Order> GetOrdersByMemberId(int memberId) => OrderDBContext.Instance.GetOrdersByMenberId(memberId);
+
         public bool InsertOrder(Order order) => OrderDBContext.Instance.Insert(order);
 
         public bool UpdateOrder(Order order) => OrderDBContext.Instance.Update(order);

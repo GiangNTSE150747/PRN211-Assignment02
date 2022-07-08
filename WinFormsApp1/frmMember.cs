@@ -17,7 +17,7 @@ namespace WinFormsApp1
         IMemberRepository memberRepository = new MemberRepository();
         BindingSource source;
 
-        public Member User { get; set; } = null;
+        //public Member User { get; set; } = null;
 
         public frmMember()
         {
@@ -29,7 +29,7 @@ namespace WinFormsApp1
             btnDelete.Enabled = false;
             dgvMemberList.CellDoubleClick += dgvMemberList_CellDoubleClick;
 
-            if(User != null)
+            if(frmMain.User != null)
             {
                 UserInitializeComponent();
             }
@@ -41,7 +41,50 @@ namespace WinFormsApp1
             btnAdd.Visible = false;
             btnLoad.Visible = false;
             btnDelete.Visible = false;
+            btnUpdate.Visible = true;
             dgvMemberList.Visible = false;
+
+            txtMenberId.Text = frmMain.User.MemberId.ToString();
+            txtEmail.Text = frmMain.User.Email;
+            txtCompanyName.Text = frmMain.User.CompanyName;
+            txtCity.Text = frmMain.User.City;
+            txtCountry.Text = frmMain.User.Country;
+            txtPassword.Text = frmMain.User.Password;
+
+            txtCity.ReadOnly = false;
+            txtCompanyName.ReadOnly = false;
+            txtCountry.ReadOnly = false;
+            //txtEmail.ReadOnly = false;
+            txtPassword.ReadOnly = false;
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                IMemberRepository memberRepository = new MemberRepository();
+                var member = new Member
+                {
+                    MemberId = int.Parse(txtMenberId.Text),
+                    Email = txtEmail.Text,
+                    CompanyName = txtCompanyName.Text,
+                    City = txtCity.Text,
+                    Country = txtCountry.Text,
+                    Password = txtPassword.Text
+                };
+
+                memberRepository.UpdateMember(member);
+
+                MessageBox.Show("Update successfully" , "Message");
+
+                frmMain.User = null;
+
+                frmMain.User = memberRepository.GetMemberById(int.Parse(txtMenberId.Text));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Update information");
+            }
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
@@ -171,14 +214,9 @@ namespace WinFormsApp1
             }
         }
 
-        private void lbHeader_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
     }
 }

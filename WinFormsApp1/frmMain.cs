@@ -14,7 +14,7 @@ namespace WinFormsApp1
     public partial class frmMain : Form
     {
 
-        public Member User { get; set; } = null;
+        public static Member User { get; set; } = null;
 
         public frmMain()
         {
@@ -28,10 +28,7 @@ namespace WinFormsApp1
 
         private void btnMemberManage_Click(object sender, EventArgs e)
         {
-            loadForm(new frmMember
-            {
-                User = this.User
-            });
+            loadForm(new frmMember());
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -45,8 +42,8 @@ namespace WinFormsApp1
 
         private void UserInitializeComponent()
         {
-            btnMemberManage.Text = "Your Infor";
-            tsBtnMemberManagememt.Text = "Your Infor";
+            btnMemberManage.Text = "Your Information";
+            tsBtnMemberManagememt.Text = "Your Information";
             seperator1.Visible = false;
             btnProductManagement.Visible = false;
             tsBtnProductManagement.Visible = false;

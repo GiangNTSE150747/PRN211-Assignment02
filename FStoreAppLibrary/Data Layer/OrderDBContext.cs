@@ -31,6 +31,14 @@ namespace FStoreAppLibrary.Data_Layer
             }
         }
 
+        public List<Order> GetOrdersByMenberId(int memberId)
+        {
+            using (FStoreContext fStoreContext = new FStoreContext())
+            {
+                return fStoreContext.Orders.Where(p => p.MemberId == memberId).ToList();
+            }
+        }
+
         public Order GetOrderById(int orderId)
         {
             using (FStoreContext fStoreContext = new FStoreContext())

@@ -69,7 +69,6 @@
             this.txtFreight.Size = new System.Drawing.Size(226, 27);
             this.txtFreight.TabIndex = 47;
             this.txtFreight.Validating += new System.ComponentModel.CancelEventHandler(this.txtFreight_Validating);
-            this.txtFreight.Validated += new System.EventHandler(this.txtFreight_Validated);
             // 
             // txtShippedDate
             // 
@@ -210,6 +209,7 @@
             // 
             this.txtProductId.Location = new System.Drawing.Point(583, 89);
             this.txtProductId.Name = "txtProductId";
+            this.txtProductId.ReadOnly = true;
             this.txtProductId.Size = new System.Drawing.Size(226, 27);
             this.txtProductId.TabIndex = 51;
             // 
@@ -217,6 +217,7 @@
             // 
             this.txtUnitPrice.Location = new System.Drawing.Point(583, 140);
             this.txtUnitPrice.Name = "txtUnitPrice";
+            this.txtUnitPrice.ReadOnly = true;
             this.txtUnitPrice.Size = new System.Drawing.Size(226, 27);
             this.txtUnitPrice.TabIndex = 51;
             // 
@@ -224,6 +225,7 @@
             // 
             this.txtDiscount.Location = new System.Drawing.Point(583, 242);
             this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.ReadOnly = true;
             this.txtDiscount.Size = new System.Drawing.Size(226, 27);
             this.txtDiscount.TabIndex = 51;
             // 
@@ -231,6 +233,7 @@
             // 
             this.txtQuantity.Location = new System.Drawing.Point(583, 191);
             this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.ReadOnly = true;
             this.txtQuantity.Size = new System.Drawing.Size(226, 27);
             this.txtQuantity.TabIndex = 51;
             // 

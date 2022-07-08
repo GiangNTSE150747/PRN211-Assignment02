@@ -46,6 +46,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMemberList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +60,6 @@
             this.lbHeader.Size = new System.Drawing.Size(458, 50);
             this.lbHeader.TabIndex = 0;
             this.lbHeader.Text = "MEMBER MANAGEMENT";
-            this.lbHeader.Click += new System.EventHandler(this.lbHeader_Click);
             // 
             // dgvMemberList
             // 
@@ -233,6 +233,18 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUpdate.Location = new System.Drawing.Point(417, 282);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(151, 29);
+            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Visible = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // frmMember
             // 
             this.ClientSize = new System.Drawing.Size(798, 487);
@@ -255,6 +267,7 @@
             this.Controls.Add(this.lbMemberId);
             this.Controls.Add(this.dgvMemberList);
             this.Controls.Add(this.lbHeader);
+            this.Controls.Add(this.btnUpdate);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmMember";
@@ -285,5 +298,6 @@
         private Button btnAdd;
         private Button btnDelete;
         private Button btnClose;
+        private Button btnUpdate;
     }
 }

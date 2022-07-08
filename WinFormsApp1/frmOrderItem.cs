@@ -76,18 +76,6 @@ namespace WinFormsApp1
             }
         }
 
-        private void txtUnitPrice_Validated(object sender, EventArgs e)
-        {
-            string input = txtUnitPrice.Text.Trim();
-            if (input.StartsWith("$"))
-            {
-                string temp = input.Replace("$", "");
-                string specifier = "C";
-                CultureInfo culture = CultureInfo.CreateSpecificCulture("en-US");
-                txtUnitPrice.Text = Decimal.Parse(temp).ToString(specifier, culture);
-            }
-        }
-
         private void txtUnitPrice_Validating(object sender, CancelEventArgs e)
         {
             string value;
@@ -98,7 +86,7 @@ namespace WinFormsApp1
             value = txtUnitPrice.Text;
             style = NumberStyles.Number | NumberStyles.AllowCurrencySymbol;
             culture = CultureInfo.CreateSpecificCulture("en-US");
-            if (!Decimal.TryParse(value, style, culture, out currency))
+            if (!value.Equals("") && !Decimal.TryParse(value, style, culture, out currency))
             {
                 MessageBox.Show("Please enter a valid currency amount.", "Invalid Value", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 // prevent the textbox from losing focus

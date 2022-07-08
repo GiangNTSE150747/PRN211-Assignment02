@@ -23,10 +23,17 @@ namespace WinFormsApp1
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            LoadOrderList();
+            if(frmMain.User == null)
+            {
+                LoadOrderList();
+            }
+            else
+            {
+                LoadUserOrderHistory();
+            }
         }
 
-        public void LoadOrderList()
+        private void LoadOrderList()
         {
             var orders = orderRepository.GetOrders();
             try
@@ -137,6 +144,11 @@ namespace WinFormsApp1
         {
             btnDelete.Enabled = false;
             dgvOrderList.CellDoubleClick += dgvOrderList_CellDoubleClick;
+
+            if(frmMain.User != null)
+            {
+                UserInitializeComponent();
+            }
         }
 
         private void dgvOrderList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -150,19 +162,72 @@ namespace WinFormsApp1
             };
             if (frmOrderDetail.ShowDialog() == DialogResult.OK)
             {
-                LoadOrderList();
+                if (frmMain.User == null) {
+                    LoadOrderList();
+                }
+                else {
+                    LoadUserOrderHistory();
+                }
                 source.Position = source.Count - 1;
             }
         }
 
-        private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
+            this.Dispose();
+        }
+
+        private void UserInitializeComponent()
+        {
+            lbHeader.Text = "YOUR ORDER HISTORY";
+            btnAdd.Visible = false;
+            btnDelete.Visible = false;
+
+            lbStatistic.Visible = false;
+            txtStartDate.Visible = false;
+            txtEndDate.Visible = false;
+            btnReport.Visible = false;
+            line.Visible = false;
 
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        public void LoadUserOrderHistory()
         {
-            this.Close();
+            var orders = orderRepository.GetOrdersByMemberId(frmMain.User.MemberId);
+            try
+            {
+                source = new BindingSource();
+                source.DataSource = orders;
+
+                txtOrderId.DataBindings.Clear();
+                txtMemberId.DataBindings.Clear();
+                txtOrderDate.DataBindings.Clear();
+                txtRequiredDate.DataBindings.Clear();
+                txtShippedDate.DataBindings.Clear();
+                txtFreight.DataBindings.Clear();
+
+                txtOrderId.DataBindings.Add("Text", source, "OrderId");
+                txtMemberId.DataBindings.Add("Text", source, "MemberId");
+                txtOrderDate.DataBindings.Add("Text", source, "OrderDate");
+                txtRequiredDate.DataBindings.Add("Text", source, "RequiredDate");
+                txtShippedDate.DataBindings.Add("Text", source, "ShippedDate");
+                txtFreight.DataBindings.Add("Text", source, "Freight");
+
+                dgvOrderList.DataSource = null;
+                dgvOrderList.DataSource = source;
+                this.dgvOrderList.Columns["Member"].Visible = false;
+                this.dgvOrderList.Columns["OrderDetails"].Visible = false;
+                this.dgvOrderList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+
+                if (orders.Count() == 0)
+                {
+                    MessageBox.Show("You do not have any order yet", "Message");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Load order history");
+            }
         }
     }
 }

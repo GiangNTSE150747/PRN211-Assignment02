@@ -43,10 +43,9 @@ namespace WinFormsApp1
             else if (((MemberRepository)memberRepository).CheckExistUser(email, password) != null)
             {
                 this.Hide();
-                frmMain frmMain = new frmMain
-                {
-                    User = ((MemberRepository)memberRepository).CheckExistUser(email, password)
-                };
+                frmMain frmMain = new frmMain();
+
+                frmMain.User = ((MemberRepository)memberRepository).CheckExistUser(email, password);
 
                 frmMain.ShowDialog();
             }

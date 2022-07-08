@@ -44,11 +44,11 @@
             this.lbOrderId = new System.Windows.Forms.Label();
             this.dgvOrderList = new System.Windows.Forms.DataGridView();
             this.lbHeader = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.line = new System.Windows.Forms.Panel();
+            this.lbStatistic = new System.Windows.Forms.Label();
             this.btnReport = new System.Windows.Forms.Button();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtEndDate = new System.Windows.Forms.MaskedTextBox();
+            this.txtStartDate = new System.Windows.Forms.MaskedTextBox();
             this.txtOrderDate = new System.Windows.Forms.MaskedTextBox();
             this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderList)).BeginInit();
@@ -217,25 +217,25 @@
             this.lbHeader.TabIndex = 23;
             this.lbHeader.Text = "ORDER MANAGEMENT";
             // 
-            // panel1
+            // line
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel1.Location = new System.Drawing.Point(32, 151);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(738, 2);
-            this.panel1.TabIndex = 40;
+            this.line.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.line.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.line.Location = new System.Drawing.Point(32, 151);
+            this.line.Name = "line";
+            this.line.Size = new System.Drawing.Size(738, 2);
+            this.line.TabIndex = 40;
             // 
-            // label1
+            // lbStatistic
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(36, 92);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 25);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Statistic:";
+            this.lbStatistic.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbStatistic.AutoSize = true;
+            this.lbStatistic.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbStatistic.Location = new System.Drawing.Point(36, 92);
+            this.lbStatistic.Name = "lbStatistic";
+            this.lbStatistic.Size = new System.Drawing.Size(85, 25);
+            this.lbStatistic.TabIndex = 41;
+            this.lbStatistic.Text = "Statistic:";
             // 
             // btnReport
             // 
@@ -247,33 +247,30 @@
             this.btnReport.Text = "View report";
             this.btnReport.UseVisualStyleBackColor = true;
             // 
-            // maskedTextBox2
+            // txtEndDate
             // 
-            this.maskedTextBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.maskedTextBox2.Location = new System.Drawing.Point(409, 93);
-            this.maskedTextBox2.Mask = "00/00/0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(226, 27);
-            this.maskedTextBox2.TabIndex = 43;
-            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
-            this.maskedTextBox2.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
+            this.txtEndDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtEndDate.Location = new System.Drawing.Point(409, 93);
+            this.txtEndDate.Mask = "00/00/0000";
+            this.txtEndDate.Name = "txtEndDate";
+            this.txtEndDate.Size = new System.Drawing.Size(226, 27);
+            this.txtEndDate.TabIndex = 43;
+            this.txtEndDate.ValidatingType = typeof(System.DateTime);
             // 
-            // maskedTextBox1
+            // txtStartDate
             // 
-            this.maskedTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.maskedTextBox1.Location = new System.Drawing.Point(142, 93);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(226, 27);
-            this.maskedTextBox1.TabIndex = 43;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
-            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
+            this.txtStartDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtStartDate.Location = new System.Drawing.Point(142, 93);
+            this.txtStartDate.Mask = "00/00/0000";
+            this.txtStartDate.Name = "txtStartDate";
+            this.txtStartDate.Size = new System.Drawing.Size(226, 27);
+            this.txtStartDate.TabIndex = 43;
+            this.txtStartDate.ValidatingType = typeof(System.DateTime);
             // 
             // txtOrderDate
             // 
             this.txtOrderDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtOrderDate.Location = new System.Drawing.Point(138, 257);
-            this.txtOrderDate.Mask = "00/00/0000 90:00";
             this.txtOrderDate.Name = "txtOrderDate";
             this.txtOrderDate.ReadOnly = true;
             this.txtOrderDate.Size = new System.Drawing.Size(226, 27);
@@ -299,11 +296,11 @@
             this.ControlBox = false;
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtOrderDate);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.txtStartDate);
+            this.Controls.Add(this.txtEndDate);
             this.Controls.Add(this.btnReport);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lbStatistic);
+            this.Controls.Add(this.line);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnLoad);
@@ -346,11 +343,11 @@
         private Label lbOrderId;
         private DataGridView dgvOrderList;
         private Label lbHeader;
-        private Panel panel1;
-        private Label label1;
+        private Panel line;
+        private Label lbStatistic;
         private Button btnReport;
-        private MaskedTextBox maskedTextBox2;
-        private MaskedTextBox maskedTextBox1;
+        private MaskedTextBox txtEndDate;
+        private MaskedTextBox txtStartDate;
         private MaskedTextBox txtOrderDate;
         private Button btnClose;
     }

@@ -58,7 +58,6 @@
             this.txtUnitPrice.Size = new System.Drawing.Size(226, 27);
             this.txtUnitPrice.TabIndex = 28;
             this.txtUnitPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txtUnitPrice_Validating);
-            this.txtUnitPrice.Validated += new System.EventHandler(this.txtUnitPrice_Validated);
             // 
             // txtWeight
             // 
