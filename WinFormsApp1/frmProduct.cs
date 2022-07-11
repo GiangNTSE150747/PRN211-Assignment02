@@ -72,8 +72,8 @@ namespace WinFormsApp1
                     CategoryId = int.Parse(txtCategory.Text),
                     ProductName = txtProductName.Text,
                     Weight = txtCategory.Text,
-                    UnitPrice =  decimal.Parse(txtUnitPrice.Text),                   
-                    UnitStock = int.Parse(txtUnitStock.Text)                    
+                    UnitPrice = decimal.Parse(txtUnitPrice.Text),
+                    UnitStock = int.Parse(txtUnitStock.Text)
                 };
 
             }
@@ -112,8 +112,15 @@ namespace WinFormsApp1
 
         private void LoadSearchedProducts()
         {
-            var products = ((ProductRepository)productRepository).Searching(cbKeySearching.Text, txtKeyword.Text);
-            FillDataDgv(products);
+            try
+            {
+                var products = ((ProductRepository)productRepository).Searching(cbKeySearching.Text, txtKeyword.Text);
+                FillDataDgv(products);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Searching product");
+            }
         }
 
         private void FillDataDgv(List<Product> products)
