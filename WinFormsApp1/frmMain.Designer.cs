@@ -38,9 +38,9 @@
             this.tsBtnProductManagement = new System.Windows.Forms.ToolStripMenuItem();
             this.tsBtnOrderManagement = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnGuide = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnMemberManage = new System.Windows.Forms.ToolStripButton();
             this.seperator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -125,29 +125,31 @@
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem6,
+            this.btnGuide,
             this.toolStripSeparator4,
-            this.toolStripMenuItem7});
+            this.btnAbout});
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
             this.toolStripMenuItem5.Size = new System.Drawing.Size(55, 24);
             this.toolStripMenuItem5.Text = "Help";
             // 
-            // toolStripMenuItem6
+            // btnGuide
             // 
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(151, 26);
-            this.toolStripMenuItem6.Text = "Guide";
+            this.btnGuide.Name = "btnGuide";
+            this.btnGuide.Size = new System.Drawing.Size(224, 26);
+            this.btnGuide.Text = "Guide";
+            this.btnGuide.Click += new System.EventHandler(this.btnGuide_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(148, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(221, 6);
             // 
-            // toolStripMenuItem7
+            // btnAbout
             // 
-            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(151, 26);
-            this.toolStripMenuItem7.Text = "About us";
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(224, 26);
+            this.btnAbout.Text = "About us";
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // toolStrip1
             // 
@@ -235,7 +237,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FStore";
+            this.Text = "Management";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -258,9 +260,9 @@
         private ToolStripMenuItem tsBtnMemberManagememt;
         private ToolStripMenuItem tsBtnProductManagement;
         private ToolStripMenuItem tsBtnOrderManagement;
-        private ToolStripMenuItem toolStripMenuItem6;
+        private ToolStripMenuItem btnGuide;
         private ToolStripSeparator toolStripSeparator4;
-        private ToolStripMenuItem toolStripMenuItem7;
+        private ToolStripMenuItem btnAbout;
         private ToolStrip toolStrip1;
         private ToolStripButton btnMemberManage;
         private ToolStripSeparator seperator1;

@@ -113,7 +113,6 @@ namespace WinFormsApp1
         private void frmOrder_Load(object sender, EventArgs e)
         {
             btnDelete.Enabled = false;
-            dgvOrderList.CellDoubleClick += dgvOrderList_CellDoubleClick;
 
             if(frmMain.User != null)
             {
@@ -153,6 +152,8 @@ namespace WinFormsApp1
             btnAdd.Visible = false;
             btnDelete.Visible = false;
 
+            lbFrom.Visible = false;
+            lbTo.Visible = false;
             lbStatistic.Visible = false;
             txtStartDate.Visible = false;
             txtEndDate.Visible = false;
@@ -203,6 +204,31 @@ namespace WinFormsApp1
             this.dgvOrderList.Columns["Member"].Visible = false;
             this.dgvOrderList.Columns["OrderDetails"].Visible = false;
             this.dgvOrderList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            var orders = orderRepository.GetOrdersInDateRange(DateTime.Parse(txtStartDate.Text),
+                DateTime.Parse(txtEndDate.Text));
+            try
+            {
+                FillDataGridView(orders);
+
+                if (orders.Count() == 0)
+                {
+                    ClearText();
+                    btnDelete.Enabled = false;
+                }
+                else
+                {
+                    btnDelete.Enabled = true;
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Load report order list");
+            }
         }
     }
 }

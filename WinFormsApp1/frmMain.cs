@@ -99,5 +99,14 @@ namespace WinFormsApp1
             frmLogin.Show();
         }
 
+        private void btnGuide_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is NOT available yet!", "Help");
+        }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Team 2 - SE1623 made this app with Luv <3", "About us");
+        }
     }
 }

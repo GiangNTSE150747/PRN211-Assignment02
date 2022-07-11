@@ -35,23 +35,29 @@ namespace FStoreAppLibrary.Data_Layer
         {
             using (FStoreContext fStoreContext = new FStoreContext())
             {
-                switch (searchBy)
+                try
                 {
-                    case "Product Name":
-                        return fStoreContext.Products.Where(p => p.ProductName.Contains(keyword)).ToList();
-                        break;
-                    case "Product ID":
-                        return fStoreContext.Products.Where(p => p.ProductId == int.Parse(keyword)).ToList();
-                        break;
-                    case "Unit In Stock":
-                        return fStoreContext.Products.Where(p => p.UnitStock == int.Parse(keyword)).ToList();
-                        break;
-                    case "Unit Price":
-                        return fStoreContext.Products.Where(p => p.UnitPrice == decimal.Parse(keyword)).ToList();
-                        break;
-                    default:
-                        return null;
-                        break;
+                    switch (searchBy)
+                    {
+                        case "Product Name":
+                            return fStoreContext.Products.Where(p => p.ProductName.Contains(keyword)).ToList();
+                            break;
+                        case "Product ID":
+                            return fStoreContext.Products.Where(p => p.ProductId == int.Parse(keyword)).ToList();
+                            break;
+                        case "Unit In Stock":
+                            return fStoreContext.Products.Where(p => p.UnitStock == int.Parse(keyword)).ToList();
+                            break;
+                        case "Unit Price":
+                            return fStoreContext.Products.Where(p => p.UnitPrice == decimal.Parse(keyword)).ToList();
+                            break;
+                        default:
+                            return null;
+                            break;
+                    }
+                } catch(Exception ex)
+                {
+                    throw new Exception(ex.Message);
                 }
             }
         }

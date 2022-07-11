@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.txtFreight = new System.Windows.Forms.TextBox();
-            this.txtShippedDate = new System.Windows.Forms.TextBox();
-            this.txtRequiredDate = new System.Windows.Forms.TextBox();
-            this.txtOrderDate = new System.Windows.Forms.TextBox();
             this.txtMemberId = new System.Windows.Forms.TextBox();
             this.txtOrderId = new System.Windows.Forms.TextBox();
             this.lbShippedDate = new System.Windows.Forms.Label();
@@ -59,6 +56,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnItemInfor = new System.Windows.Forms.Panel();
             this.lbHeaderGDV = new System.Windows.Forms.Label();
+            this.txtOrderDate = new System.Windows.Forms.DateTimePicker();
+            this.txtRequiredDate = new System.Windows.Forms.DateTimePicker();
+            this.txtShippedDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetail)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,27 +69,6 @@
             this.txtFreight.Size = new System.Drawing.Size(226, 27);
             this.txtFreight.TabIndex = 47;
             this.txtFreight.Validating += new System.ComponentModel.CancelEventHandler(this.txtFreight_Validating);
-            // 
-            // txtShippedDate
-            // 
-            this.txtShippedDate.Location = new System.Drawing.Point(144, 279);
-            this.txtShippedDate.Name = "txtShippedDate";
-            this.txtShippedDate.Size = new System.Drawing.Size(226, 27);
-            this.txtShippedDate.TabIndex = 46;
-            // 
-            // txtRequiredDate
-            // 
-            this.txtRequiredDate.Location = new System.Drawing.Point(144, 232);
-            this.txtRequiredDate.Name = "txtRequiredDate";
-            this.txtRequiredDate.Size = new System.Drawing.Size(226, 27);
-            this.txtRequiredDate.TabIndex = 45;
-            // 
-            // txtOrderDate
-            // 
-            this.txtOrderDate.Location = new System.Drawing.Point(144, 185);
-            this.txtOrderDate.Name = "txtOrderDate";
-            this.txtOrderDate.Size = new System.Drawing.Size(226, 27);
-            this.txtOrderDate.TabIndex = 48;
             // 
             // txtMemberId
             // 
@@ -258,13 +237,13 @@
             // dgvOrderDetail
             // 
             this.dgvOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrderDetail.Location = new System.Drawing.Point(1, 473);
+            this.dgvOrderDetail.Location = new System.Drawing.Point(12, 460);
             this.dgvOrderDetail.Name = "dgvOrderDetail";
             this.dgvOrderDetail.ReadOnly = true;
             this.dgvOrderDetail.RowHeadersWidth = 51;
             this.dgvOrderDetail.RowTemplate.Height = 29;
             this.dgvOrderDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrderDetail.Size = new System.Drawing.Size(864, 133);
+            this.dgvOrderDetail.Size = new System.Drawing.Size(841, 133);
             this.dgvOrderDetail.TabIndex = 53;
             this.dgvOrderDetail.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderDetail_CellDoubleClick);
             // 
@@ -329,17 +308,47 @@
             // 
             this.lbHeaderGDV.AutoSize = true;
             this.lbHeaderGDV.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbHeaderGDV.Location = new System.Drawing.Point(1, 439);
+            this.lbHeaderGDV.Location = new System.Drawing.Point(12, 426);
             this.lbHeaderGDV.Name = "lbHeaderGDV";
             this.lbHeaderGDV.Size = new System.Drawing.Size(215, 31);
             this.lbHeaderGDV.TabIndex = 59;
             this.lbHeaderGDV.Text = "Items in the Order:";
             // 
+            // txtOrderDate
+            // 
+            this.txtOrderDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtOrderDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtOrderDate.Location = new System.Drawing.Point(144, 185);
+            this.txtOrderDate.Name = "txtOrderDate";
+            this.txtOrderDate.Size = new System.Drawing.Size(226, 27);
+            this.txtOrderDate.TabIndex = 60;
+            // 
+            // txtRequiredDate
+            // 
+            this.txtRequiredDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtRequiredDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtRequiredDate.Location = new System.Drawing.Point(144, 233);
+            this.txtRequiredDate.Name = "txtRequiredDate";
+            this.txtRequiredDate.Size = new System.Drawing.Size(226, 27);
+            this.txtRequiredDate.TabIndex = 60;
+            // 
+            // txtShippedDate
+            // 
+            this.txtShippedDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtShippedDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtShippedDate.Location = new System.Drawing.Point(144, 281);
+            this.txtShippedDate.Name = "txtShippedDate";
+            this.txtShippedDate.Size = new System.Drawing.Size(226, 27);
+            this.txtShippedDate.TabIndex = 60;
+            // 
             // frmOrderDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(865, 607);
+            this.ClientSize = new System.Drawing.Size(865, 612);
+            this.Controls.Add(this.txtShippedDate);
+            this.Controls.Add(this.txtRequiredDate);
+            this.Controls.Add(this.txtOrderDate);
             this.Controls.Add(this.lbHeaderGDV);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnDeleteItem);
@@ -359,9 +368,6 @@
             this.Controls.Add(this.lbQuantity);
             this.Controls.Add(this.lbUnitPrice);
             this.Controls.Add(this.txtFreight);
-            this.Controls.Add(this.txtShippedDate);
-            this.Controls.Add(this.txtRequiredDate);
-            this.Controls.Add(this.txtOrderDate);
             this.Controls.Add(this.txtMemberId);
             this.Controls.Add(this.txtOrderId);
             this.Controls.Add(this.lbShippedDate);
@@ -384,9 +390,6 @@
         #endregion
 
         private TextBox txtFreight;
-        private TextBox txtShippedDate;
-        private TextBox txtRequiredDate;
-        private TextBox txtOrderDate;
         private TextBox txtMemberId;
         private TextBox txtOrderId;
         private Label lbShippedDate;
@@ -414,5 +417,8 @@
         private Panel panel2;
         private Panel pnItemInfor;
         private Label lbHeaderGDV;
+        private DateTimePicker txtOrderDate;
+        private DateTimePicker txtRequiredDate;
+        private DateTimePicker txtShippedDate;
     }
 }

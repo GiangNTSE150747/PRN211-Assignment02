@@ -39,6 +39,15 @@ namespace FStoreAppLibrary.Data_Layer
             }
         }
 
+        public List<Order> GetOrdersInDateRange(DateTime startDate, DateTime endDate)
+        {
+            using (FStoreContext fStoreContext = new FStoreContext())
+            {
+                return fStoreContext.Orders.Where(p => p.OrderDate >= startDate && p.OrderDate <= endDate )
+                    .OrderByDescending(p => p.OrderDate).ToList();
+            }
+        }
+
         public Order GetOrderById(int orderId)
         {
             using (FStoreContext fStoreContext = new FStoreContext())

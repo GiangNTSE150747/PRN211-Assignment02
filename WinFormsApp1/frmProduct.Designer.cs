@@ -268,6 +268,7 @@
             // cbKeySearching
             // 
             this.cbKeySearching.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbKeySearching.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKeySearching.FormattingEnabled = true;
             this.cbKeySearching.Items.AddRange(new object[] {
             "Product ID",

@@ -17,6 +17,8 @@ namespace FStoreAppLibrary.Data_Layer.Repository
 
         public List<Order> GetOrdersByMemberId(int memberId) => OrderDBContext.Instance.GetOrdersByMenberId(memberId);
 
+        public List<Order> GetOrdersInDateRange(DateTime startDate, DateTime endDate) => OrderDBContext.Instance.GetOrdersInDateRange(startDate, endDate);
+       
         public bool InsertOrder(Order order) => OrderDBContext.Instance.Insert(order);
 
         public bool UpdateOrder(Order order) => OrderDBContext.Instance.Update(order);

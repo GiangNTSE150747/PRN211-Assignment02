@@ -15,6 +15,6 @@ namespace FStoreAppLibrary.Data_Layer.Repository
         Boolean InsertOrder(Order order);
         Boolean UpdateOrder(Order order);
         Boolean DeleteOrder(int orderId);
-
+        List<Order> GetOrdersInDateRange(DateTime startDate, DateTime endDate);
     }
 }

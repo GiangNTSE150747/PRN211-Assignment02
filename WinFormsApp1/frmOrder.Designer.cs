@@ -47,10 +47,12 @@
             this.line = new System.Windows.Forms.Panel();
             this.lbStatistic = new System.Windows.Forms.Label();
             this.btnReport = new System.Windows.Forms.Button();
-            this.txtEndDate = new System.Windows.Forms.MaskedTextBox();
-            this.txtStartDate = new System.Windows.Forms.MaskedTextBox();
             this.txtOrderDate = new System.Windows.Forms.MaskedTextBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.txtStartDate = new System.Windows.Forms.DateTimePicker();
+            this.txtEndDate = new System.Windows.Forms.DateTimePicker();
+            this.lbFrom = new System.Windows.Forms.Label();
+            this.lbTo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -231,7 +233,7 @@
             this.lbStatistic.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbStatistic.AutoSize = true;
             this.lbStatistic.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbStatistic.Location = new System.Drawing.Point(36, 92);
+            this.lbStatistic.Location = new System.Drawing.Point(36, 95);
             this.lbStatistic.Name = "lbStatistic";
             this.lbStatistic.Size = new System.Drawing.Size(85, 25);
             this.lbStatistic.TabIndex = 41;
@@ -246,26 +248,7 @@
             this.btnReport.TabIndex = 42;
             this.btnReport.Text = "View report";
             this.btnReport.UseVisualStyleBackColor = true;
-            // 
-            // txtEndDate
-            // 
-            this.txtEndDate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtEndDate.Location = new System.Drawing.Point(409, 93);
-            this.txtEndDate.Mask = "00/00/0000";
-            this.txtEndDate.Name = "txtEndDate";
-            this.txtEndDate.Size = new System.Drawing.Size(226, 27);
-            this.txtEndDate.TabIndex = 43;
-            this.txtEndDate.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtStartDate
-            // 
-            this.txtStartDate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtStartDate.Location = new System.Drawing.Point(142, 93);
-            this.txtStartDate.Mask = "00/00/0000";
-            this.txtStartDate.Name = "txtStartDate";
-            this.txtStartDate.Size = new System.Drawing.Size(226, 27);
-            this.txtStartDate.TabIndex = 43;
-            this.txtStartDate.ValidatingType = typeof(System.DateTime);
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // txtOrderDate
             // 
@@ -288,16 +271,56 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // txtStartDate
+            // 
+            this.txtStartDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtStartDate.Location = new System.Drawing.Point(221, 94);
+            this.txtStartDate.Name = "txtStartDate";
+            this.txtStartDate.Size = new System.Drawing.Size(176, 27);
+            this.txtStartDate.TabIndex = 46;
+            // 
+            // txtEndDate
+            // 
+            this.txtEndDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtEndDate.Location = new System.Drawing.Point(460, 94);
+            this.txtEndDate.Name = "txtEndDate";
+            this.txtEndDate.Size = new System.Drawing.Size(176, 27);
+            this.txtEndDate.TabIndex = 46;
+            // 
+            // lbFrom
+            // 
+            this.lbFrom.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbFrom.AutoSize = true;
+            this.lbFrom.Location = new System.Drawing.Point(160, 97);
+            this.lbFrom.Name = "lbFrom";
+            this.lbFrom.Size = new System.Drawing.Size(46, 20);
+            this.lbFrom.TabIndex = 47;
+            this.lbFrom.Text = "From:";
+            // 
+            // lbTo
+            // 
+            this.lbTo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbTo.AutoSize = true;
+            this.lbTo.Location = new System.Drawing.Point(421, 98);
+            this.lbTo.Name = "lbTo";
+            this.lbTo.Size = new System.Drawing.Size(28, 20);
+            this.lbTo.TabIndex = 47;
+            this.lbTo.Text = "To:";
+            // 
             // frmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 487);
             this.ControlBox = false;
+            this.Controls.Add(this.lbTo);
+            this.Controls.Add(this.lbFrom);
+            this.Controls.Add(this.txtEndDate);
+            this.Controls.Add(this.txtStartDate);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtOrderDate);
-            this.Controls.Add(this.txtStartDate);
-            this.Controls.Add(this.txtEndDate);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.lbStatistic);
             this.Controls.Add(this.line);
@@ -346,9 +369,11 @@
         private Panel line;
         private Label lbStatistic;
         private Button btnReport;
-        private MaskedTextBox txtEndDate;
-        private MaskedTextBox txtStartDate;
         private MaskedTextBox txtOrderDate;
         private Button btnClose;
+        private DateTimePicker txtStartDate;
+        private DateTimePicker txtEndDate;
+        private Label lbFrom;
+        private Label lbTo;
     }
 }

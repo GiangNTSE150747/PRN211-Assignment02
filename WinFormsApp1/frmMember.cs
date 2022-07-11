@@ -16,7 +16,6 @@ namespace WinFormsApp1
         private void frmMember_Load(object sender, EventArgs e)
         {
             btnDelete.Enabled = false;
-            dgvMemberList.CellDoubleClick += dgvMemberList_CellDoubleClick;
 
             if(frmMain.User != null)
             {

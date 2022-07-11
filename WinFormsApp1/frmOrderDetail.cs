@@ -28,11 +28,11 @@ namespace WinFormsApp1
                 txtOrderId.Text = OrderInfor.OrderId.ToString();
                 txtMemberId.Text = OrderInfor.MemberId.ToString();
                 txtOrderDate.Text = OrderInfor.OrderDate.ToString();
+                txtOrderDate.Text = OrderInfor.OrderDate.ToString();
                 txtRequiredDate.Text = OrderInfor.RequiredDate.ToString();
                 txtShippedDate.Text = OrderInfor.ShippedDate.ToString();
                 txtFreight.Text = OrderInfor.Freight.ToString();
                 LoadOrderItemsList();
-                dgvOrderDetail.CellDoubleClick += dgvOrderDetail_CellDoubleClick;
             }
             else
             {
@@ -224,11 +224,11 @@ namespace WinFormsApp1
             btnNewItem.Visible = false;
             txtOrderId.ReadOnly = true;
             txtMemberId.ReadOnly = true;
-            txtOrderDate.ReadOnly = true;
-            txtRequiredDate.ReadOnly = true;
-            txtShippedDate.ReadOnly = true;
+            txtOrderDate.Enabled = false;
+            txtRequiredDate.Enabled = false;
+            txtShippedDate.Enabled = false;
             txtFreight.ReadOnly = true;
-            dgvOrderDetail.CellDoubleClick -= dgvOrderDetail_CellDoubleClick;
         }
+
     }
 }

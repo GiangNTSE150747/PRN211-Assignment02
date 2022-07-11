@@ -103,7 +103,6 @@ namespace WinFormsApp1
         private void frmProduct_Load(object sender, EventArgs e)
         {
             btnDelete.Enabled = false;
-            dgvProduct.CellDoubleClick += dgvProduct_CellDoubleClick;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
